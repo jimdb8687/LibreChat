@@ -1,9 +1,15 @@
+<<<<<<< Updated upstream
 # Linux Installation Guide
 ## **Recommended:**
 
 [![Watch the video](https://img.youtube.com/vi/w7VqivpdfZk/maxresdefault.jpg)](https://youtu.be/w7VqivpdfZk)
 Click on the thumbnail to open the video☝️
 ---
+=======
+# Linux Installation
+
+## **Recommended : [Docker Install](docker_install.md)**
+>>>>>>> Stashed changes
 
 In this video, you will learn how to install and run LibreChat, using Docker on Ubuntu 22.04 LTS.
 
@@ -91,17 +97,53 @@ sudo apt-get install -y nodejs
 ## [Get Your API keys and Tokens](apis_and_tokens.md) (Required)
 - You must set up at least one of these tokens or APIs to run the app.
 
+<<<<<<< Updated upstream
 ## [User/Auth System](../install/user_auth_system.md) (Optional)
 - How to set up the user/auth system and Google login.
+=======
+- [X] j6. Get your OpenAI API key
+
+- Visit https://platform.openai.com/account/api-keys and save your API key somewhere safe (you will need it later)
+
+## 7. Get your Bing Access Token
+
+  ⚠️**For better results, please follow these [new instructions](https://github.com/danny-avila/LibreChat/issues/370#issuecomment-1560382302)**
+
+  or
+
+  Using MS Edge, navigate to bing.com
+
+- Make sure you are logged in
+- Open the DevTools by pressing F12 on your keyboard
+- Click on the tab "Application" (On the left of the DevTools)
+- Expand the "Cookies" (Under "Storage")
+- Copy the value of the "\_U" cookiee
+
+## 8. Create the ".env" File
+
+You will need all your credentials, (API keys, access tokens, and MongoDB Connection String, MeiliSearch Master Key)
+
+- Open "~/chatgpt-clone/api/.env.example" in a text editor
+- At this line MONGO_URI="mongodb://127.0.0.1:27017/chatgpt-clone", replace mongodb://127.0.0.1:27017/chatgpt-clone with the MongoDB connection string you saved earlier, remove "&w=majority" at the end
+  - It should look something like this: "MONGO_URI="mongodb+srv://username:password@chatgpt-clone.lfbcwz3.mongodb.net/?retryWrites=true"
+- At this line OPENAI_KEY= you need to add your OpenAI API key
+  - Add your Bing token to this line BINGAI_TOKEN= (needed for BingChat & Sydney)
+  - If you want to enable Search, SEARCH=TRUE if you do not want to enable search SEARCH=FALSE
+  - Add your previously saved MeiliSearch Master key to this line MEILI_MASTER_KEY= (the key is needed if search is enabled even on local install or you may encounter errors)
+  - Save the file as "~/chatgpt-clone/api/.env"
+>>>>>>> Stashed changes
 
 ## Run the project
 
 ### Using the command line (in the root directory)
+
 Setup the app:
+
 1. Run `npm ci`
 2. Run `npm run frontend`
 
 ## Start the app:
+
 1. Run `npm run backend`
 2. Run `meilisearch --master-key put_your_meilesearch_Master_Key_here` (Only if SEARCH=TRUE)
 3. Visit http://localhost:3080 (default port) & enjoy
@@ -130,6 +172,10 @@ gnome-terminal --tab --title="LibreChat" --working-directory=/home/user/LibreCha
 
 If you update the LibreChat project files, manually redo the npm ci and npm run frontend steps.
 
+<<<<<<< Updated upstream
 ---
 
 ### Note: If you're still having trouble, before creating a new issue, please search for similar ones on our [#issues thread on our discord](https://discord.gg/weqZFtD9C4) or our [troubleshooting discussion](https://github.com/danny-avila/LibreChat/discussions/categories/troubleshooting) on our Discussions page. If you don't find a relevant issue, feel free to create a new one and provide as much detail as possible.
+=======
+## [Go Back to ReadMe](../../README.md)
+>>>>>>> Stashed changes

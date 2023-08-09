@@ -17,13 +17,23 @@ services:
     container_name: LibreChat
     ports:
       - 3080:3080               # Change it to 9000:3080 to use nginx
+      # - 9000:3080             # Change it to 9000:3080 to use nginx
+
     depends_on:
       - mongodb
+<<<<<<< Updated upstream
     image: librechat                # Comment this & uncomment below to build from docker hub image
     build:                                   # ^------
       context: .                              # ^------
       target: node                             # ^------v
     # image: ghcr.io/danny-avila/librechat:latest # Uncomment this & comment above to build from docker hub image
+=======
+    # image: node-api            # Comment this & uncomment below to build from docker hub image
+    build:
+      context: .
+      target: node-api
+    image: chatgptclone/app:latest # Uncomment this & comment above to build from docker hub image
+>>>>>>> Stashed changes
     restart: always
     extra_hosts: # if you are running APIs on docker you need access to, you will need to uncomment this line and next
     - "host.docker.internal:host-gateway"
